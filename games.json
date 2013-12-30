@@ -1,0 +1,28 @@
+{
+  "games": [
+    {
+      "name": "Garry's Mod",
+      "aliases": [
+        "garrysmod",
+        "gmod"
+      ],
+      "app_id": 4020
+    },
+    {
+      "name": "Counter Strike: Source",
+      "aliases": [
+        "counterstrikesource",
+        "css"
+      ],
+      "app_id": 232330
+    },
+    {
+      "name": "Team Fortress 2",
+      "aliases": [
+        "teamfortress2",
+        "tf2"
+      ],
+      "app_id": 232250
+    }
+  ]
+}
