@@ -19,13 +19,13 @@ WARN	= YELLOW
 def colorcode(code):
 	return '{}{}{}'.format(CSI, code, 'm')
 
-def printc(color, string):
-	if config.COLOR:
+def printc(string, color=None):
+	if config.COLOR and color != None:
 		sys.stdout.write(colorcode(color))
 	sys.stdout.write(string)
-	if config.COLOR:
+	if config.COLOR and color != None:
 		sys.stdout.write(colorcode(RESET))
 
-def printcln(color, string):
-	printc(color, string)
+def printcln(string, color=None):
+	printc(string, color)
 	sys.stdout.write('\n')
