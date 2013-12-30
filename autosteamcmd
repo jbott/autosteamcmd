@@ -20,12 +20,10 @@ games_data = games.load_file(config.AUTOSTEAMCMD_PATH + "/games.json")
 
 # List all games in the data file
 if args.list:
+	name_width = max(len(row['name']) for row in games_data['games']) # Padding for name
+	printcln("Name:".ljust(name_width) + '    ' + "App ID:".ljust(10) + '    ' + "Aliases:")
 	for game in games_data['games']:
-		printcln(game['name'] + ' (' + str(game['app_id']) + ')')
-		printcln('Aliases:')
-		for alias in game['aliases']:
-			printcln('- ' + alias)
-		printcln("")
+		printcln(game['name'].ljust(name_width) + '    ' + str(game['app_id']).ljust(10) + '    ' + "".join(alias + ' ' for alias in game['aliases']))
 	sys.exit(0)
 
 # We have an app, find and install it!
